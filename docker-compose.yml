@@ -2,74 +2,64 @@ services:
   db:
     image: postgres:16-alpine
     environment:
-      POSTGRES_DB: espn_db
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-    ports:
-      - "5432:5432"
+      POSTGRES_DB: fotmob_db
+      POSTGRES_USER: fotmob
+      POSTGRES_PASSWORD: fotmob_pass
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      test: ["CMD-SHELL", "pg_isready -U fotmob"]
       interval: 5s
       timeout: 5s
       retries: 5
 
   redis:
     image: redis:7-alpine
-    ports:
-      - "6379:6379"
+    command: redis-server --save ""
     healthcheck:
       test: ["CMD", "redis-cli", "ping"]
       interval: 5s
-      timeout: 3s
+      timeout: 5s
       retries: 5
 
   web:
     build:
-      context: ./espn_service
-    command: >
-      sh -c "python manage.py migrate &&
-             python manage.py runserver 0.0.0.0:8000"
+      context: ./fotmob_service
+      target: builder
+    command: python manage.py runserver 0.0.0.0:8000
+    working_dir: /app
     volumes:
-      - ./espn_service:/app
+      - ./fotmob_service:/app
     ports:
       - "8000:8000"
-    env_file:
-      - espn_service/.env
+    environment:
+      DJANGO_SETTINGS_MODULE: config.settings.local
+      DATABASE_URL: postgres://fotmob:fotmob_pass@db:5432/fotmob_db
+      CELERY_BROKER_URL: redis://redis:6379/0
+      SECRET_KEY: dev-secret-key
+      DEBUG: "true"
     depends_on:
       db:
         condition: service_healthy
       redis:
         condition: service_healthy
 
-  worker:
+  celery:
     build:
-      context: ./espn_service
-    command: celery -A config worker --loglevel=info
+      context: ./fotmob_service
+      target: builder
+    command: celery -A config.celery worker -l info
+    working_dir: /app
     volumes:
-      - ./espn_service:/app
-    env_file:
-      - espn_service/.env
+      - ./fotmob_service:/app
+    environment:
+      DJANGO_SETTINGS_MODULE: config.settings.local
+      DATABASE_URL: postgres://fotmob:fotmob_pass@db:5432/fotmob_db
+      CELERY_BROKER_URL: redis://redis:6379/0
+      SECRET_KEY: dev-secret-key
     depends_on:
-      db:
-        condition: service_healthy
-      redis:
-        condition: service_healthy
-
-  beat:
-    build:
-      context: ./espn_service
-    command: celery -A config beat --loglevel=info
-    volumes:
-      - ./espn_service:/app
-    env_file:
-      - espn_service/.env
-    depends_on:
-      db:
-        condition: service_healthy
-      redis:
-        condition: service_healthy
+      - redis
+      - web
 
 volumes:
   postgres_data:

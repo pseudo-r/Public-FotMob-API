@@ -1,0 +1,1 @@
+"""FotMob app package."""
