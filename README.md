@@ -99,7 +99,8 @@ Full granular documentation for each endpoint family:
 * **[Player Endpoints](docs/endpoints/players.md)** - `playerData`
 * **[Team Endpoints](docs/endpoints/teams.md)** - `teams`
 * **[Competition & Standings](docs/endpoints/leagues.md)** - `leagues`, `allLeagues`
-* **[News & Transfers](docs/endpoints/news_transfers.md)** - `worldnews`, `transfers`
+* **[News & Transfers](docs/endpoints/news_transfers.md)** - `worldnews`, `transfers`, `trendingnews`
+* **[TV & Broadcast Listings](docs/endpoints/tv_listings.md)** - `tvlistings`
 
 ---
 

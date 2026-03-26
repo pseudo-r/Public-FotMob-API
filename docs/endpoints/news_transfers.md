@@ -98,3 +98,35 @@ curl "https://www.fotmob.com/api/transfers"
 ### Notes
 - A very rich data structure defining strict `playerId`, `fromClubId`, and `toClubId` properties allowing straightforward mapping across the internal API.
 - Includes perceived `marketValue` and the actual `fee`.
+
+---
+
+## Trending News
+
+### Endpoint
+`https://www.fotmob.com/api/trendingnews`
+
+### Method
+`GET`
+
+### Example Request
+```bash
+# Get the global trending news carousel metadata 
+curl -s "https://www.fotmob.com/api/trendingnews"
+```
+
+### [VERIFIED] Example Response
+```json
+[
+  {
+    "id": "re9jou6vcqe91m9rkvwkgugbv",
+    "imageUrl": "https://images.performgroup.com/di/library/...",
+    "title": "Tuchel admits Alexander-Arnold omission 'unfair'",
+    "gmtTime": "2026-03-26T20:10:58.000Z",
+    "sourceStr": "FotMob",
+    "page": {
+      "url": "/news/re9jou6vcqe91m9rkvwkgugbv..."
+    }
+  }
+]
+```
