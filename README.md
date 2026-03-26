@@ -101,6 +101,7 @@ Full granular documentation for each endpoint family:
 * **[Competition & Standings](docs/endpoints/leagues.md)** - `leagues`, `allLeagues`
 * **[News & Transfers](docs/endpoints/news_transfers.md)** - `worldnews`, `transfers`, `trendingnews`
 * **[TV & Broadcast Listings](docs/endpoints/tv_listings.md)** - `tvlistings`
+* **[Audio, Data Providers & Match Score](docs/endpoints/audio_data.md)** - `audio-matches`, `dataproviders`, `match-score`
 
 ---
 
