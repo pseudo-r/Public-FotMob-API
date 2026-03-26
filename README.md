@@ -116,16 +116,31 @@ FotMob's JSON payloads frequently expose unique football metrics missing from st
 
 ## Additional Domains / Endpoint Families
 
-While `www.fotmob.com/api/` handles 95% of the data ingestion, other domains play supporting roles:
+While `www.fotmob.com/api/` handles 95% of the data ingestion, other domains and versioned routes exist but present challenges:
+
+### Versioned Routes (`/v1/`, `/v2/`, `/v3/`)
+- **Pattern Example:** `https://www.fotmob.com/api/v1/matches`
+- **Status:** **DOES NOT EXIST / 404 NOT FOUND**
+- **Notes:** Unlike the ESPN or NFL APIs, FotMob does not maintain distinct versioned routes. All attempts to query `/v1/`, `/v2/`, or `/v3/` variants of standard endpoints explicitly return HTTP 404 errors. Schema updates are simply deployed to the base unversioned route.
 
 ### `images.fotmob.com`
 - **Purpose:** Centralized asset delivery for dynamically sizing player headshots, team crests, and league logos.
 - **Pattern Example:** `https://images.fotmob.com/image_resources/playerimages/{playerId}.png`
-- **Status:** **VERIFIED**
+- **Status:** **CURRENT / VERIFIED**
 
 ### `pub.fotmob.com`
-- **Purpose:** Sometimes discovered in reverse-engineered mobile app traces or web proxies, it appears to serve older or internal production routes. Attempting direct JSON fetching from `pub.fotmob.com/prod/pub/match/{id}` often times out or rejects unauthenticated client requests via Cloudfront.
-- **Status:** **UNVERIFIED / INTERNAL**
+- **Purpose:** Connected to their mobile app ecosystem, often passing through AWS CloudFront. 
+- **Pattern Example:** `https://pub.fotmob.com/prod/pub/match/{id}`
+- **Status:** **UNVERIFIED / BLOCKED (401 UNAUTHORIZED)**
+- **Notes:** Attempting to query the mobile domain directly via generic stateless scripts generally yields a 401 Unauthorized response. It requires specific mobile authentication or session cookies that are not necessary on the `www.fotmob.com` domain.
+
+### `data.fotmob.com`
+- **Purpose:** Older legacy historical feed or internal big-data cache.
+- **Pattern Example:** `https://data.fotmob.com/api`
+- **Status:** **UNVERIFIED / BLOCKED (403 FORBIDDEN)**
+- **Notes:** General `GET` requests fail outright with HTTP 403 Forbidden.
+
+> For more details on interacting with these alternate subdomains, see [docs/endpoints/system_mobile.md](docs/endpoints/system_mobile.md).
 
 ---
 
