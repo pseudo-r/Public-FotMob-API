@@ -1,5 +1,7 @@
 <!-- GitAds-Verify: 44FZ4IWPYGNOY6XFRMCK946T5LOIFT23 -->
 
+> **Unofficial project and usage scope:** This repository contains endpoint documentation and reference code. It is not affiliated with or endorsed by the upstream providers and does not offer a hosted API or data service. “Public” describes endpoint reachability, not permission to collect, reuse, or redistribute data. See [project scope and permitted use](PROJECT_SCOPE.md) before using the examples.
+
 Service maintenance: [September 2026 audit, new routes, verification, and limitations](docs/audit-2026-09-30.md).
 
 # FotMob Public API Documentation
@@ -24,15 +26,6 @@ If this documentation has saved you time, consider supporting ongoing developmen
 Every contribution helps keep this project updated as FotMob changes their API.
 
 ---
-
-## 📱 Real-World Apps Built With This API
-
-These apps are live examples of what you can build using this documentation and the included Django service wrapper in the broader sports backend:
-
-### ⚽ [Sportly: Soccer Live](https://play.google.com/store/apps/details?id=com.sportly.soccer)
-> Premier League, La Liga, Bundesliga, Serie A, MLS, and more — live scores, tables, fixtures, and news powered by comprehensive soccer data.
-
-[![Get it on Google Play](https://img.shields.io/badge/Google_Play-Sportly_Soccer-3DDC84?logo=google-play&logoColor=white)](https://play.google.com/store/apps/details?id=com.sportly.soccer)
 
 ## Table of Contents
 

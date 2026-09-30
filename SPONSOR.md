@@ -26,15 +26,4 @@ Maintaining reverse-engineered API documentation takes time — testing endpoint
 
 ---
 
-## 🚀 Built With This Project
-
-These real apps are powered by the endpoints documented here:
-
-### ⚽ [Sportly: Soccer Live (Android)](https://play.google.com/store/apps/details?id=com.sportly.soccer)
-Premier League, La Liga, Bundesliga, Serie A, MLS, and more — live scores, tables, fixtures, and news.
-
-[![Google Play](https://img.shields.io/badge/Google_Play-Sportly_Soccer-3DDC84?logo=google-play&logoColor=white)](https://play.google.com/store/apps/details?id=com.sportly.soccer)
-
----
-
 *Even a small contribution means a lot. Thank you!* 🙏
