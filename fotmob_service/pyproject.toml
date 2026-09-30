@@ -14,18 +14,18 @@ authors = [
 ]
 classifiers = [
     "Development Status :: 4 - Beta",
-    "Framework :: Django :: 5.0",
+    "Framework :: Django :: 5.2",
     "Intended Audience :: Developers",
     "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3.12",
 ]
 
 dependencies = [
-    "django>=5.0,<6.0",
-    "djangorestframework>=3.14,<4.0",
+    "django>=5.2.17,<5.3",
+    "djangorestframework>=3.16,<4.0",
     "django-environ>=0.11,<1.0",
     "django-cors-headers>=4.3,<5.0",
-    "django-filter>=24.0,<25.0",
+    "django-filter>=25.1,<26.0",
     "drf-spectacular>=0.27,<1.0",
     "psycopg[binary]>=3.1,<4.0",
     "redis>=5.0,<6.0",
@@ -34,7 +34,7 @@ dependencies = [
     "httpx>=0.27,<1.0",
     "tenacity>=8.2,<9.0",
     "structlog>=24.0,<25.0",
-    "gunicorn>=21.0,<23.0",
+    "gunicorn>=23.0,<24.0",
     "whitenoise>=6.6,<7.0",
 ]
 
@@ -49,7 +49,7 @@ dev = [
     "faker>=24.0,<25.0",
     "ruff>=0.3,<1.0",
     "mypy>=1.9,<2.0",
-    "django-stubs>=4.2,<6.0",
+    "django-stubs>=5.2,<6.0",
     "djangorestframework-stubs>=3.14,<4.0",
     "pre-commit>=3.6,<4.0",
     "ipython>=8.22,<9.0",

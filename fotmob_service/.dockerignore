@@ -1,0 +1,11 @@
+.env
+.env.*
+!.env.example
+.venv
+__pycache__
+*.pyc
+.git
+*.sqlite3
+htmlcov
+.coverage
+celerybeat-schedule*

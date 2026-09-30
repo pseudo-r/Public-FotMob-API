@@ -78,7 +78,7 @@ curl "https://www.fotmob.com/api/teams?id=8456"
 ```
 
 ### Verification Status
-**VERIFIED**
+**HISTORICALLY DOCUMENTED — September 2026 hub sample returned 404 HTML; current availability is not verified.**
 
 ### Notes
 - **Extremely Heavy Payload:** This endpoint hydrates the entire team page in one go. It includes the entire `squad` matrix, months of `fixtures`, current `form` run, and tournament statistics depending on context.

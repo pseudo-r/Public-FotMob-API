@@ -10,5 +10,5 @@ class HealthCheckView(APIView):
     authentication_classes = []
     permission_classes = []
 
-    def get(self, request: Request) -> Response:
+    def get(self, request: Request) -> Response:  # noqa: ARG002
         return Response({"status": "ok", "service": "fotmob-service"})

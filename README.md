@@ -1,5 +1,7 @@
 <!-- GitAds-Verify: 44FZ4IWPYGNOY6XFRMCK946T5LOIFT23 -->
 
+Service maintenance: [September 2026 audit, new routes, verification, and limitations](docs/audit-2026-09-30.md).
+
 # FotMob Public API Documentation
 
 **Disclaimer:** This is documentation for FotMob's undocumented public API. I am not affiliated with FotMob. Use responsibly and follow their terms of service.
@@ -61,7 +63,7 @@ There are several structural domains that serve data:
 
 | Domain | Versioning | Purpose | Known Status |
 |--------|---------|---------|-------------|
-| `www.fotmob.com/api` | **Unversioned** | Primary data endpoints (matches, leagues, teams) | **CURRENT / VERIFIED** |
+| `www.fotmob.com/api` | **Unversioned** | Historically documented data endpoints | **League/team samples returned 404 on 2026-09-30** |
 | `images.fotmob.com` | **Unversioned** | Static image feeds, kit rendering, player faces | **CURRENT / VERIFIED** |
 | `pub.fotmob.com` | **Unversioned** | Often used for mobile telemetry or cached feed delivery | **UNVERIFIED / INTERNAL** |
 

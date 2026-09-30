@@ -5,6 +5,7 @@ from .views import (
     AllLeaguesView,
     AudioMatchesView,
     DataProvidersView,
+    LeagueTableView,
     LeagueView,
     MatchDetailView,
     MatchesView,
@@ -12,6 +13,7 @@ from .views import (
     PlayerView,
     SearchSuggestView,
     SearchView,
+    TeamFixturesView,
     TeamView,
     TransfersView,
     TrendingNewsView,
@@ -20,6 +22,8 @@ from .views import (
 )
 
 urlpatterns = [
+    path("leagues/<int:league_id>/table/", LeagueTableView.as_view(), name="fotmob-league-table"),
+    path("teams/<int:team_id>/fixtures/", TeamFixturesView.as_view(), name="fotmob-team-fixtures"),
     # Matches
     path("matches/", MatchesView.as_view(), name="fotmob-matches"),
     path("matches/<str:match_id>/", MatchDetailView.as_view(), name="fotmob-match-detail"),

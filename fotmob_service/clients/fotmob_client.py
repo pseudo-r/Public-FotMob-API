@@ -23,6 +23,10 @@ class FotMobClientError(Exception):
     """Raised when FotMob returns an unexpected status."""
 
 
+class FotMobTransientError(FotMobClientError):
+    """Retryable network or upstream server failure."""
+
+
 class FotMobNotFoundError(FotMobClientError):
     """Raised when FotMob returns 404."""
 
@@ -43,28 +47,30 @@ class FotMobClient:
     def close(self) -> None:
         self._client.close()
 
-    def __enter__(self) -> "FotMobClient":
+    def __enter__(self) -> FotMobClient:
         return self
 
     def __exit__(self, *_) -> None:
         self.close()
 
     @retry(
-        retry=retry_if_exception_type(FotMobClientError),
+        retry=retry_if_exception_type(FotMobTransientError),
         stop=stop_after_attempt(3),
         wait=wait_exponential(multiplier=1, min=1, max=10),
         reraise=True,
     )
     def _get(self, path: str, params: dict | None = None) -> FotMobResponse:
         url = f"{self._base_url}/{path.lstrip('/')}"
-        logger.debug("fotmob_request", url=url, params=params)
+        logger.debug("fotmob_request url=%s params=%s", url, params)
         try:
             resp = self._client.get(url, params=params)
         except httpx.RequestError as exc:
-            raise FotMobClientError(f"Request failed: {exc}") from exc
+            raise FotMobTransientError(f"Request failed: {exc}") from exc
 
         if resp.status_code == 404:
             raise FotMobNotFoundError(f"Not found: {url}")
+        if resp.status_code >= 500:
+            raise FotMobTransientError(f"HTTP {resp.status_code}: {url}")
         if resp.status_code >= 400:
             raise FotMobClientError(f"HTTP {resp.status_code}: {url}")
 

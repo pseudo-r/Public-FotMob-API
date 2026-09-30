@@ -59,7 +59,7 @@ curl "https://www.fotmob.com/api/allLeagues"
 ```
 
 ### Verification Status
-**VERIFIED**
+**HISTORICALLY DOCUMENTED — September 2026 hub sample returned 404 HTML; current availability is not verified.**
 
 ### Notes
 - Categorized into `international` and `countries` arrays.
@@ -155,7 +155,7 @@ curl "https://www.fotmob.com/api/leagues?id=47"
 ```
 
 ### Verification Status
-**VERIFIED**
+**HISTORICALLY DOCUMENTED — September 2026 hub sample returned 404 HTML; current availability is not verified.**
 
 ### Notes
 - **Heavy Payload:** Includes `table`, `matches`, `overview`, `stats`, and `transfers` nodes natively. No need for secondary calls for league leaders.

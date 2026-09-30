@@ -18,7 +18,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: espn_service
+        working-directory: fotmob_service
 
     services:
       postgres:
@@ -50,7 +50,7 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
           cache: pip
-          cache-dependency-path: espn_service/pyproject.toml
+          cache-dependency-path: fotmob_service/pyproject.toml
 
       - name: Install dependencies
         run: pip install -e ".[dev]"
@@ -69,7 +69,7 @@ jobs:
         if: matrix.python-version == '3.12'
         uses: codecov/codecov-action@v4
         with:
-          file: espn_service/coverage.xml
+          file: fotmob_service/coverage.xml
           flags: unittests
           fail_ci_if_error: false
 

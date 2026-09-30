@@ -1,0 +1,16 @@
+[
+  {
+    "url": "https://www.fotmob.com/api/leagues?id=47",
+    "checked_at": "2026-09-30T14:27:14.722824+00:00",
+    "status": 404,
+    "content_type": "text/html; charset=utf-8",
+    "json": false
+  },
+  {
+    "url": "https://www.fotmob.com/api/teams?id=8456",
+    "checked_at": "2026-09-30T14:27:17.549802+00:00",
+    "status": 404,
+    "content_type": "text/html; charset=utf-8",
+    "json": false
+  }
+]
