@@ -1,6 +1,6 @@
 # fotmob_service
 
-Production-ready **Django REST Framework** proxy service for the unofficial [FotMob API](https://www.fotmob.com).
+Reference **Django REST Framework** proxy implementation. Read the [project scope](../PROJECT_SCOPE.md) before use. FotMob restricts automated retrieval; this code does not grant permission. Recurring Celery Beat collection is disabled by default. Manually invoked clients and endpoints can still make upstream requests and require an independently authorized use.
 
 ## Quick Start (Docker)
 

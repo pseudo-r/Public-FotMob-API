@@ -66,6 +66,8 @@ There are several structural domains that serve data:
 
 ## Quick Start
 
+FotMob's [terms of use](https://www.fotmob.com/tos.txt) prohibit automated or systematic retrieval without permission. These examples describe request formats; do not execute them without authorization. The [repository takedown request](https://github.com/pseudo-r/Public-FotMob-API/issues/1) remains unresolved.
+
 ```bash
 # Get Match Details (Lineups, incidents, stats)
 curl "https://www.fotmob.com/api/data/matchDetails?matchId=4310531"

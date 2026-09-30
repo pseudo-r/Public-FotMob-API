@@ -153,16 +153,8 @@ CELERY_RESULT_SERIALIZER = "json"
 CELERY_TIMEZONE = TIME_ZONE
 CELERY_TASK_TRACK_STARTED = True
 CELERY_TASK_TIME_LIMIT = 30 * 60
-CELERY_BEAT_SCHEDULE = {
-    "refresh-fotmob-trending-15min": {
-        "task": "apps.fotmob.tasks.refresh_trending_news_task",
-        "schedule": 900.0,  # Every 15 minutes
-    },
-    "refresh-fotmob-transfers-1h": {
-        "task": "apps.fotmob.tasks.refresh_transfers_task",
-        "schedule": 3600.0,  # Every hour
-    },
-}
+# No recurring upstream collection by default. Provider permission is required.
+CELERY_BEAT_SCHEDULE = {}
 
 FOTMOB_CLIENT = {
     "BASE_URL": env("FOTMOB_BASE_URL", default="https://www.fotmob.com/api"),
