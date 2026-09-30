@@ -1,0 +1,120 @@
+[
+  {
+    "source": "https://www.fotmob.com/_next/static/chunks/37463-b03c28eb18e31af6.js",
+    "page": "https://www.fotmob.com/",
+    "routes": [
+      "/api/data/allLeagues"
+    ],
+    "checked_at": "2026-09-30T14:35:18.783321+00:00"
+  },
+  {
+    "source": "https://www.fotmob.com/_next/static/chunks/87205-d481d4561034bf21.js",
+    "page": "https://www.fotmob.com/",
+    "routes": [
+      "/api/data/matches"
+    ],
+    "checked_at": "2026-09-30T14:35:18.793759+00:00"
+  },
+  {
+    "source": "https://www.fotmob.com/_next/static/chunks/8033-c8add946b6395d8e.js",
+    "page": "https://www.fotmob.com/",
+    "routes": [
+      "/api/data/audio-matches",
+      "/api/data/dataproviders",
+      "/api/data/tvlistings"
+    ],
+    "checked_at": "2026-09-30T14:35:18.808179+00:00"
+  },
+  {
+    "source": "https://www.fotmob.com/_next/static/chunks/90829-970d0b06ba31541e.js",
+    "page": "https://www.fotmob.com/teams/8456/overview/manchester-city",
+    "routes": [
+      "/api/data/teams",
+      "/api/data/tlnews"
+    ],
+    "checked_at": "2026-09-30T14:35:20.592294+00:00"
+  },
+  {
+    "source": "https://www.fotmob.com/_next/static/chunks/32001-3d0542341b0a8798.js",
+    "page": "https://www.fotmob.com/players/174543/lionel-messi",
+    "routes": [
+      "/api/data/playerData",
+      "/api/data/playerMatches"
+    ],
+    "checked_at": "2026-09-30T14:35:21.743020+00:00"
+  },
+  {
+    "source": "https://www.fotmob.com/_next/static/chunks/pages/_app-0b9cee14fd34e247.js",
+    "page": "https://www.fotmob.com/leagues/47/overview/premier-league",
+    "routes": [
+      "/api/data/leagueDataForMatch",
+      "/api/data/matchDetails",
+      "/api/data/matchup"
+    ],
+    "checked_at": "2026-09-30T14:35:21.818933+00:00"
+  },
+  {
+    "source": "https://www.fotmob.com/_next/static/chunks/86307-b7476d82b1ff2fed.js",
+    "page": "https://www.fotmob.com/leagues/47/overview/premier-league",
+    "routes": [
+      "/api/data/leagues",
+      "/api/data/tlnews"
+    ],
+    "checked_at": "2026-09-30T14:35:21.859076+00:00"
+  },
+  {
+    "url": "https://www.fotmob.com/api/data/leagues?id=47",
+    "status": 200,
+    "checked_at": "2026-09-30T14:35:22.472607+00:00",
+    "top_level_keys": [
+      "tabs",
+      "allAvailableSeasons",
+      "details",
+      "seostr",
+      "QAData",
+      "table",
+      "transfers",
+      "overview",
+      "stats",
+      "fixtures",
+      "playoff",
+      "seasons"
+    ]
+  },
+  {
+    "url": "https://www.fotmob.com/api/data/teams?id=8456",
+    "status": 200,
+    "checked_at": "2026-09-30T14:35:23.026385+00:00",
+    "top_level_keys": [
+      "tabs",
+      "allAvailableSeasons",
+      "details",
+      "seostr",
+      "QAData",
+      "table",
+      "transfers",
+      "overview",
+      "stats",
+      "fixtures",
+      "squad",
+      "history"
+    ]
+  },
+  {
+    "url": "https://www.fotmob.com/api/data/tlnews?id=8456&type=team&language=en&startIndex=0",
+    "status": 200,
+    "checked_at": "2026-09-30T14:36:24.856522+00:00",
+    "top_level_keys": [
+      "data",
+      "totalItems"
+    ]
+  },
+  {
+    "url": "https://www.fotmob.com/api/data/leagueDataForMatch?matchId=4310531&leagueId=47",
+    "status": 404,
+    "checked_at": "2026-09-30T14:36:25.731876+00:00",
+    "top_level_keys": [
+      "error"
+    ]
+  }
+]

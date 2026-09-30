@@ -9,7 +9,7 @@ These endpoints are used to hydrate league overview pages, retrieving table stan
 Fetches the complete directory of tournaments, leagues, and international competitions tracked by FotMob. 
 
 ### Endpoint
-`https://www.fotmob.com/api/allLeagues`
+`https://www.fotmob.com/api/data/allLeagues`
 
 ### Method
 `GET`
@@ -22,7 +22,7 @@ None
 
 ### Example Request
 ```bash
-curl "https://www.fotmob.com/api/allLeagues"
+curl "https://www.fotmob.com/api/data/allLeagues"
 ```
 
 ### Example Response
@@ -59,7 +59,7 @@ curl "https://www.fotmob.com/api/allLeagues"
 ```
 
 ### Verification Status
-**HISTORICALLY DOCUMENTED — September 2026 hub sample returned 404 HTML; current availability is not verified.**
+**VERIFIED 2026-09-30 — current `/api/data/` hub returned HTTP 200 JSON. The older `/api/` hub returned 404.**
 
 ### Notes
 - Categorized into `international` and `countries` arrays.
@@ -72,7 +72,7 @@ curl "https://www.fotmob.com/api/allLeagues"
 Retrieve the comprehensive structural data for a specific league, including full standings, active form, stats leaders (goals, assists), and specific round fixtures.
 
 ### Endpoint
-`https://www.fotmob.com/api/leagues`
+`https://www.fotmob.com/api/data/leagues`
 
 ### Method
 `GET`
@@ -88,7 +88,7 @@ Retrieve the comprehensive structural data for a specific league, including full
 
 ### Example Request
 ```bash
-curl "https://www.fotmob.com/api/leagues?id=47"
+curl "https://www.fotmob.com/api/data/leagues?id=47"
 ```
 
 ### Example Response
@@ -155,7 +155,7 @@ curl "https://www.fotmob.com/api/leagues?id=47"
 ```
 
 ### Verification Status
-**HISTORICALLY DOCUMENTED — September 2026 hub sample returned 404 HTML; current availability is not verified.**
+**VERIFIED 2026-09-30 — current `/api/data/` hub returned HTTP 200 JSON. The older `/api/` hub returned 404.**
 
 ### Notes
 - **Heavy Payload:** Includes `table`, `matches`, `overview`, `stats`, and `transfers` nodes natively. No need for secondary calls for league leaders.

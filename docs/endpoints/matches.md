@@ -9,7 +9,7 @@ FotMob's match endpoints deliver live scores, lineups, expected goals (xG), mome
 Retrieve all scheduled or completed matches for a specific date across all covered leagues.
 
 ### Endpoint
-`https://www.fotmob.com/api/matches`
+`https://www.fotmob.com/api/data/matches`
 
 ### Method
 `GET`
@@ -22,7 +22,7 @@ Retrieve all scheduled or completed matches for a specific date across all cover
 
 ### Example Request
 ```bash
-curl "https://www.fotmob.com/api/matches?date=20240326"
+curl "https://www.fotmob.com/api/data/matches?date=20240326"
 ```
 
 ### Example Response
@@ -70,7 +70,7 @@ curl "https://www.fotmob.com/api/matches?date=20240326"
 The primary endpoint for everything inside a match page — from lineups and incidents to aggregate statistics and pitch momentum tracking.
 
 ### Endpoint
-`https://www.fotmob.com/api/matchDetails`
+`https://www.fotmob.com/api/data/matchDetails`
 
 ### Method
 `GET`
@@ -83,7 +83,7 @@ The primary endpoint for everything inside a match page — from lineups and inc
 
 ### Example Request
 ```bash
-curl "https://www.fotmob.com/api/matchDetails?matchId=4310531"
+curl "https://www.fotmob.com/api/data/matchDetails?matchId=4310531"
 ```
 
 ### Example Response

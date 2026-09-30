@@ -9,7 +9,7 @@ These endpoints retrieve comprehensive details about football clubs, national te
 Retrieve the full team center profile, including general information, current squad rosters, recent fixtures, tournament standings context, and historical trajectory.
 
 ### Endpoint
-`https://www.fotmob.com/api/teams`
+`https://www.fotmob.com/api/data/teams`
 
 ### Method
 `GET`
@@ -26,7 +26,7 @@ Retrieve the full team center profile, including general information, current sq
 
 ### Example Request
 ```bash
-curl "https://www.fotmob.com/api/teams?id=8456"
+curl "https://www.fotmob.com/api/data/teams?id=8456"
 ```
 
 ### Example Response
@@ -78,9 +78,9 @@ curl "https://www.fotmob.com/api/teams?id=8456"
 ```
 
 ### Verification Status
-**HISTORICALLY DOCUMENTED — September 2026 hub sample returned 404 HTML; current availability is not verified.**
+**VERIFIED 2026-09-30 — current `/api/data/` hub returned HTTP 200 JSON. The older `/api/` hub returned 404.**
 
 ### Notes
 - **Extremely Heavy Payload:** This endpoint hydrates the entire team page in one go. It includes the entire `squad` matrix, months of `fixtures`, current `form` run, and tournament statistics depending on context.
-- Uses `www.fotmob.com/api/teams`, surprisingly pluralized `teams` despite taking a singular `id` query parameter.
+- Uses `www.fotmob.com/api/data/teams`, surprisingly pluralized `teams` despite taking a singular `id` query parameter.
 - Image assets for team crests should be fetched from `images.fotmob.com/image_resources/logo/teamlogo/{teamId}.png`.

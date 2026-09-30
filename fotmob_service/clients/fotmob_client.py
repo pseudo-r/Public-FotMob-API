@@ -86,11 +86,11 @@ class FotMobClient:
     # ------------------------------------------------------------------ #
     def get_matches_by_date(self, date: str) -> FotMobResponse:
         """Get all matches for a date (YYYYMMDD)."""
-        return self._get("matches", params={"date": date})
+        return self._get("data/matches", params={"date": date})
 
     def get_match_details(self, match_id: str | int) -> FotMobResponse:
         """Full match payload — lineups, stats, incidents, xG."""
-        return self._get("matchDetails", params={"matchId": match_id})
+        return self._get("data/matchDetails", params={"matchId": match_id})
 
     def get_match_score(self, match_id: str | int) -> FotMobResponse:
         """Lightweight live score — faster than matchDetails."""
@@ -101,28 +101,28 @@ class FotMobClient:
     # ------------------------------------------------------------------ #
     def get_all_leagues(self) -> FotMobResponse:
         """Directory of all available leagues."""
-        return self._get("allLeagues")
+        return self._get("data/allLeagues")
 
     def get_league(self, league_id: str | int, season: str | None = None) -> FotMobResponse:
         """League standings, fixtures, and leaders."""
         params: dict = {"id": league_id}
         if season:
             params["season"] = season
-        return self._get("leagues", params=params)
+        return self._get("data/leagues", params=params)
 
     # ------------------------------------------------------------------ #
     # Teams
     # ------------------------------------------------------------------ #
     def get_team(self, team_id: str | int) -> FotMobResponse:
         """Full team profile — roster, fixtures, form."""
-        return self._get("teams", params={"id": team_id})
+        return self._get("data/teams", params={"id": team_id})
 
     # ------------------------------------------------------------------ #
     # Players
     # ------------------------------------------------------------------ #
     def get_player(self, player_id: str | int) -> FotMobResponse:
         """Player bio, ratings, and recent match stats."""
-        return self._get("playerData", params={"id": player_id})
+        return self._get("data/playerData", params={"id": player_id})
 
     # ------------------------------------------------------------------ #
     # Search
@@ -164,3 +164,14 @@ class FotMobClient:
     def get_audio_matches(self, date: str) -> FotMobResponse:
         """Audio-commentary-eligible matches for a date."""
         return self._get("data/audio-matches", params={"date": date})
+
+
+    def get_league_match_context(self, match_id: int, league_id: int) -> FotMobResponse:
+        """League context used by the current match-detail page."""
+        return self._get("data/leagueDataForMatch", params={"matchId": match_id, "leagueId": league_id})
+
+    def get_entity_news(self, entity_id: int, entity_type: str, language: str = "en", start_index: int = 0) -> FotMobResponse:
+        """Current team/league news feed; start_index controls pagination."""
+        if entity_type not in {"team", "league"} or start_index < 0:
+            raise ValueError("Use team or league and a non-negative start_index")
+        return self._get("data/tlnews", params={"id": entity_id, "type": entity_type, "language": language, "startIndex": start_index})

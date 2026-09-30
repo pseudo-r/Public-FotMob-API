@@ -63,7 +63,7 @@ There are several structural domains that serve data:
 
 | Domain | Versioning | Purpose | Known Status |
 |--------|---------|---------|-------------|
-| `www.fotmob.com/api` | **Unversioned** | Historically documented data endpoints | **League/team samples returned 404 on 2026-09-30** |
+| `www.fotmob.com/api/data` | **Unversioned** | Current main data routes observed in the website bundles | **League/team samples returned 200 JSON on 2026-09-30** |
 | `images.fotmob.com` | **Unversioned** | Static image feeds, kit rendering, player faces | **CURRENT / VERIFIED** |
 | `pub.fotmob.com` | **Unversioned** | Often used for mobile telemetry or cached feed delivery | **UNVERIFIED / INTERNAL** |
 
@@ -75,16 +75,16 @@ There are several structural domains that serve data:
 
 ```bash
 # Get Match Details (Lineups, incidents, stats)
-curl "https://www.fotmob.com/api/matchDetails?matchId=4310531"
+curl "https://www.fotmob.com/api/data/matchDetails?matchId=4310531"
 
 # Get League/Standings Data (e.g., Premier League = 47)
-curl "https://www.fotmob.com/api/leagues?id=47"
+curl "https://www.fotmob.com/api/data/leagues?id=47"
 
 # Get Team Data (e.g., Man City = 8456)
-curl "https://www.fotmob.com/api/teams?id=8456"
+curl "https://www.fotmob.com/api/data/teams?id=8456"
 
 # Get Player Profile (e.g., De Bruyne = 174543)
-curl "https://www.fotmob.com/api/playerData?id=174543"
+curl "https://www.fotmob.com/api/data/playerData?id=174543"
 
 # Search for Teams/Players
 curl "https://www.fotmob.com/api/searchData?term=messi"

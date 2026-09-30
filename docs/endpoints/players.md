@@ -9,7 +9,7 @@ These endpoints retrieve career statistics, bio data, season tracking, and recen
 Retrieve the comprehensive player bio, current club details, international caps, and recent match performance ratings.
 
 ### Endpoint
-`https://www.fotmob.com/api/playerData`
+`https://www.fotmob.com/api/data/playerData`
 
 ### Method
 `GET`
@@ -22,7 +22,7 @@ Retrieve the comprehensive player bio, current club details, international caps,
 
 ### Example Request
 ```bash
-curl "https://www.fotmob.com/api/playerData?id=174543"
+curl "https://www.fotmob.com/api/data/playerData?id=174543"
 ```
 
 ### Example Response
